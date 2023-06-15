@@ -1,0 +1,29 @@
+# Logs
+/logs
+*.log
+
+# Reports
+/allure-report
+/.tmp
+/.nyc_output
+
+# Temporary files
+/.DS_Store
+/.idea
+
+# Test output
+/allure-results
+/output
+
+# Dependencies
+/node_modules
+
+# Environment variables
+.env
+
+# Editor and IDE files
+/.vscode
+/.idea
+
+# WebDriver binaries
+/.webdriverio
