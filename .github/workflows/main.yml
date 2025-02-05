@@ -24,5 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install correct ChromeDriver version
+        run: |
+          npx chromedriver --detect-drivers
+          npx chromedriver --version
+
       - name: Run tests
         run: npx wdio run wdio.conf.js
