@@ -24,8 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install latest compatible ChromeDriver
-        run: npm install chromedriver@latest --save-dev
+      - name: Install stable Chrome and ChromeDriver
+        run: |
+          choco install googlechrome --version=114.0.5735.90 -y
+          choco install chromedriver --version=114.0.5735.90 -y
 
       - name: Run tests
         run: npx wdio run wdio.conf.js
