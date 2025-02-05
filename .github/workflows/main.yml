@@ -21,13 +21,16 @@ jobs:
         with:
           node-version: 16.17.1
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Install stable Chrome and ChromeDriver
         run: |
           choco install googlechrome --version=114.0.5735.90 -y
           choco install chromedriver --version=114.0.5735.90 -y
+
+      - name: Remove invalid chromedriver from package.json
+        run: npm uninstall chromedriver
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Run tests
         run: npx wdio run wdio.conf.js
